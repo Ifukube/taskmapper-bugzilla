@@ -30,8 +30,8 @@ module TaskMapper::Provider
               :status => object.status,
               :target_milestone => object.target_milestone,
               :severity => object.severity,
-              :created_at => nil,
-              :updated_at => nil}
+              :created_at => object.creation_time,
+              :updated_at => object.last_change_time}
           else
             hash = object
           end
