@@ -108,6 +108,11 @@ module TaskMapper::Provider
         Comment.find_by_id(self.id, options.first)
       end
 
+      def send_update(attributes)
+        bug = Rubyzilla::Bug.new
+        bug.send_update attributes
+      end
+
       private
       def normalize_datetime(datetime)
         Time.mktime(datetime.year, datetime.month, datetime.day, datetime.hour, datetime.min, datetime.sec)
